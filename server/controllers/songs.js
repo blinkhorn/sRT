@@ -30,4 +30,24 @@ module.exports = {
       })
       .catch(error => res.status(400).send(400));
   },
+  update(req, res) {
+    return Song
+      .findById(req.params.songId)
+      .then(song => {
+        if (!song) {
+          return res.status(404).send({
+            message: 'Song Not Found',
+          });
+        }
+        return song
+          .update({
+            mood: req.body.mood || song.mood,
+            listener: req.body.listener || song.listener,
+            title: req.body.title || song.title,
+          })
+          .then(() => res.status(200).send(todo))
+          .catch((error) => res.status(400).send(error));
+      })
+      .catch((error) => res.status(400).send(error));
+  }
 };

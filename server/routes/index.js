@@ -8,4 +8,5 @@ module.exports = (app) => {
   app.post('/api/songs', songsController.create);
   app.get('/api/songs', songsController.list);
   app.get('/api/songs/:songId', songsController.retrieve);
+  app.put('/api/songs/:songId', songsController.update);
 };
