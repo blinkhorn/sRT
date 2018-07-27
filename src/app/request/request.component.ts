@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
+import { RequestsService } from './requests.service';
 
 @Component({
   selector: 'app-request',
@@ -7,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
+  enteredMood = '';
+  enteredListener = '';
 
-  constructor() { }
+  constructor(public requestsService: RequestsService) { }
 
   ngOnInit() {
   }
 
-  onClickSubmit(data): void {
-
+  onClickSubmit(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.requestsService.addRequest(form.value.mood, form.value.listener);
   }
 }
