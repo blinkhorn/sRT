@@ -7,6 +7,6 @@ module.exports = (app) => {
 
   app.post('/api/songs', songsController.create);
   app.get('/api/songs', songsController.list);
-  app.get('/api/songsByType', songsController.retrieve);
+  app.get('/api/songByType', songsController.retrieve);
   app.put('/api/songs/:songId', songsController.update);
 };

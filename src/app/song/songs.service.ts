@@ -13,7 +13,7 @@ export class SongsService {
   constructor(private http: HttpClient) { }
 
   getSong(theMood: string, theListener: string) {
-    this.http.get<{song: Song}>(`http://localhost:8000/api/songsByType?mood=${theMood}&listener=${theListener}`)
+    this.http.get<{song: Song}>(`http://localhost:8000/api/songByType?mood=${theMood}&listener=${theListener}`)
       .subscribe((songData) => {
         this.song = songData.song;
       });
