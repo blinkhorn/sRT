@@ -19,7 +19,7 @@ module.exports = {
   },
   retrieve(req, res) {
     return Song
-      .findById(req.params.songId)
+      .findOne({ where: { mood: `${req.query.mood}`, listener: `${req.query.listener}` }})
       .then(song => {
         if (!song) {
           return res.status(404).send({

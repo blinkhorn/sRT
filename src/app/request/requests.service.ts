@@ -1,26 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Request } from './request.model';
-import { Subject } from 'rxjs';
+// import { Request } from './request.model';
+
+import { SongsService } from '../song/songs.service';
+
+// import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestsService {
-  private requests: Request[] = [];
-  private requestsUpdated = new Subject<Request[]>();
+  // private request: Request;
+  // private requestUpdated = new Subject<Request>();
 
-  getRequests() {
-    return [...this.requests];
+  constructor(public songsService: SongsService)  { }
+
+  // getRequest() {
+  //   return this.request;
+  // }
+
+  // getRequestUpdateListener() {
+  //   return this.requestUpdated.asObservable();
+  // }
+
+  makeRequest(mood: string, listener: string) {
+    this.songsService.getSong(mood, listener);
   }
 
-  getRequestUpdateListener() {
-    return this.requestsUpdated.asObservable();
-  }
-
-  addRequest(mood: string, listener: string) {
-    const request: Request = { mood: mood, listener: listener };
-    this.requests.push(request);
-    this.requestsUpdated.next([...this.requests]);
-  }
-  constructor()  { }
 }

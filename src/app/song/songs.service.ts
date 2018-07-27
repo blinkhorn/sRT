@@ -7,22 +7,22 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SongsService {
-  private songs: Song[] = [];
-  private songsUpdated = new Subject<Song[]>();
+  private song: Song;
+  // private songsUpdated = new Subject<Song[]>();
 
   constructor(private http: HttpClient) { }
 
-  getSongs() {
-    this.http.get<{songs: Song[]}>('htp://localhost:8000/api/songs')
+  getSong(theMood: string, theListener: string) {
+    this.http.get<{song: Song}>(`http://localhost:8000/api/songsByType?mood=${theMood}&listener=${theListener}`)
       .subscribe((songData) => {
-        this.songs = songData.songs;
-        this.songsUpdated.next([...this.songs]);
+        this.song = songData.song;
       });
+      return this.song;
   }
 
-  get songsUpdatedListener() {
-    return this.songsUpdated.asObservable();
-  }
+  // get songsUpdatedListener() {
+  //   return this.songsUpdated.asObservable();
+  // }
 
   // addSon(mood: string, listener: string, title: string)
 }

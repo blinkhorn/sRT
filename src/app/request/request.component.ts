@@ -20,6 +20,6 @@ export class RequestComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.requestsService.addRequest(form.value.mood, form.value.listener);
+    this.requestsService.makeRequest(form.value.mood, form.value.listener);
   }
 }
