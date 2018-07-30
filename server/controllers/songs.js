@@ -5,7 +5,7 @@ module.exports = {
     return Song
       .create({
         mood: req.body.mood,
-        listener: req.body.listener,
+        listener_type: req.body.listener_type,
         title: req.body.title,
       })
       .then(song => res.status(201).send(song))
@@ -19,7 +19,7 @@ module.exports = {
   },
   retrieve(req, res) {
     return Song
-      .findOne({ where: { mood: `${req.query.mood}`, listener: `${req.query.listener}` }})
+      .findOne({ where: { listener_type: `${req.query.listener_type}`, mood: `${req.query.mood}` }})
       .then(song => {
         if (!song) {
           return res.status(404).send({
@@ -42,7 +42,7 @@ module.exports = {
         return song
           .update({
             mood: req.body.mood || song.mood,
-            listener: req.body.listener || song.listener,
+            listener_type: req.body.listener_type || song.listener_type,
             title: req.body.title || song.title,
           })
           .then(() => res.status(200).send(todo))
