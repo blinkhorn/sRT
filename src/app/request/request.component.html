@@ -1,3 +1,7 @@
+<div *ngIf="songTitle != undefined" class="alert alert-success text-center" role="alert">
+  <h4 class="alert-heading">Listen to this!</h4>
+  <p>"{{ songTitle }}"</p>
+</div>
 <!-- Main Page form -->
 <form #songRequest="ngForm" (ngSubmit)="onClickSubmit(songRequest)">
   <div class="d-flex flex-column align-items-center">

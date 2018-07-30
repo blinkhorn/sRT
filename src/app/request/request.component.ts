@@ -9,7 +9,7 @@ import { RequestsService } from './requests.service';
 })
 export class RequestComponent implements OnInit {
 
-  songId: number;
+  public songTitle: string;
 
   constructor(public requestsService: RequestsService) { }
 
@@ -20,7 +20,11 @@ export class RequestComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.requestsService.makeRequest(form.value.mood, form.value.listener);
-    this.songId = this.requestsService.getSongId();
+    const that = this;
+    this.requestsService.makeRequest(form.value.mood, form.value.listener)
+    .subscribe((songData) => {
+      that.songTitle = songData.theSong.title;
+    });
+
   }
 }

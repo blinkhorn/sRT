@@ -26,7 +26,7 @@ module.exports = {
             message: 'Song Not Found',
           })
         }
-        return res.status(200).send(song);
+        return res.status(200).json({theSong: song});
       })
       .catch(error => res.status(400).send(400));
   },
