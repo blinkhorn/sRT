@@ -15,7 +15,9 @@ export class SongsService {
   getSong(theMood: string, theListener: string) {
     this.http.get<{song: Song}>(`http://localhost:8000/api/songByType?listener_type=${theListener}&mood=${theMood}`)
       .subscribe((songData) => {
+        console.log('songData in songs.service: ', songData);
         this.song = songData.song;
+        console.log('song in songs.service: ', this.song);
       });
       return this.song;
   }
