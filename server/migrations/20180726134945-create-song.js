@@ -10,7 +10,7 @@ module.exports = {
       mood: {
         type: Sequelize.STRING
       },
-      listener: {
+      listener_type: {
         type: Sequelize.STRING
       },
       title: {

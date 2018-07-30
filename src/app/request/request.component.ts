@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm, FormControl } from '@angular/forms';
+import { RequestsService } from './requests.service';
 
 @Component({
   selector: 'app-request',
@@ -8,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestComponent implements OnInit {
 
-  constructor() { }
+  public songTitle: string;
+
+  constructor(public requestsService: RequestsService) { }
 
   ngOnInit() {
   }
 
-  onClickSubmit(data): void {
+  onClickSubmit(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    const that = this;
+    this.requestsService.makeRequest(form.value.mood, form.value.listener)
+    .subscribe((songData) => {
+      that.songTitle = songData.theSong.title;
+    });
 
   }
 }

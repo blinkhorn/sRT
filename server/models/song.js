@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    listener: {
+    listener_type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
