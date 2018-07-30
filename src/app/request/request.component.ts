@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
 import { RequestsService } from './requests.service';
 
 @Component({
@@ -8,8 +8,8 @@ import { RequestsService } from './requests.service';
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
-  enteredMood = '';
-  enteredListener = '';
+
+  songId: number;
 
   constructor(public requestsService: RequestsService) { }
 
@@ -21,5 +21,6 @@ export class RequestComponent implements OnInit {
       return;
     }
     this.requestsService.makeRequest(form.value.mood, form.value.listener);
+    this.songId = this.requestsService.getSongId();
   }
 }

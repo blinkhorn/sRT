@@ -12,18 +12,17 @@ export class RequestsService {
   // private request: Request;
   // private requestUpdated = new Subject<Request>();
 
+  private songId: number;
+
   constructor(public songsService: SongsService)  { }
 
-  // getRequest() {
-  //   return this.request;
-  // }
-
-  // getRequestUpdateListener() {
-  //   return this.requestUpdated.asObservable();
-  // }
-
   makeRequest(mood: string, listener: string) {
-    this.songsService.getSong(mood, listener);
+    this.songId = this.songsService.getSong(mood, listener).id;
   }
+
+  getSongId() {
+    return this.songId;
+  }
+
 
 }

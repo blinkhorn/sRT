@@ -1,10 +1,11 @@
-<form #songRequest="ngForm" (ngSubmit)="onClickSubmit(songRequest.value)">
+<!-- Main Page form -->
+<form #songRequest="ngForm" (ngSubmit)="onClickSubmit(songRequest)">
   <div class="d-flex flex-column align-items-center">
     <label>Mood
-      <input type="text" name="mood" class="form-control" ngModel>
+      <input type="text" name="mood" class="form-control" ngModel required>
     </label>
     <label>Listener Type
-      <input type="type" name="listener" class="form-control" ngModel>
+      <input type="type" name="listener" class="form-control" ngModel required>
     </label>
     <input class="input-group-btn btn btn-primary" type="submit" value="Request">
   </div>
