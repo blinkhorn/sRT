@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Request } from './request.model';
-
-import { SongsService } from '../song/songs.service';
-import { Song } from '../song/song.model';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
@@ -10,13 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RequestsService {
-  // private request: Request;
-  // private requestUpdated = new Subject<Request>();
-  private song: Song;
 
-  constructor(public songsService: SongsService)  { }
+  constructor(private http: HttpClient)  { }
 
   makeRequest(mood: string, listener: string): Observable<any> {
-    return this.songsService.getSong(mood, listener);
+    return this.getSong(mood, listener);
+  }
+
+  getSong(theMood: string, theListener: string): Observable<any> {
+    return this.http.get(`http://localhost:8000/api/songByType?listener_type=${theListener}&mood=${theMood}`);
   }
 }

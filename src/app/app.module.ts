@@ -7,15 +7,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RequestComponent } from './request/request.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { SongComponent } from './song/song.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RequestComponent,
-    SongComponent
+    RequestComponent
   ],
   imports: [
     BrowserModule,

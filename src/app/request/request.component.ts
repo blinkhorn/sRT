@@ -25,6 +25,5 @@ export class RequestComponent implements OnInit {
     .subscribe((songData) => {
       that.songTitle = songData.theSong.title;
     });
-
   }
 }
