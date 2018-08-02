@@ -1,0 +1,10 @@
+<h3 class="text-center">How are you feeling?</h3>
+
+<form #moodInput="ngForm" (ngSubmit)="onSubmitMood(moodInput)" >
+  <div class="d-flex flex-column align-items-center">
+    <label>
+      <input type="text" name="mood" class="form-control" ngModel required>
+    </label>
+    <a href="{{ getListenerTypeAddress() }}"><input class="input-group-btn btn btn-primary" type="submit" value="Submit Mood"></a>
+  </div>
+</form>

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { RequestComponent } from '../request/request.component';
+import { MoodInputComponent } from '../mood-input/mood-input.component';
 
 const routes: Routes = [
-  { path: '', component: RequestComponent }
+  { path: '', component: MoodInputComponent }
 ];
 
 @NgModule({
