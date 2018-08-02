@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-listener-type-input',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListenerTypeInputComponent implements OnInit {
 
-  constructor() { }
+  private mood: string;
+
+  constructor(public route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe( (paramMap: ParamMap) => {
+      this.mood = paramMap.get('mood');
+    });
+  }
+
+  getMood(): string {
+    return this.mood;
   }
 
 }
