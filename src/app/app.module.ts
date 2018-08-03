@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MoodListenerInputComponent } from './mood-listener-input/mood-listener-input.component';
+import { BasicResultComponent } from './basic-result/basic-result.component';
+import { RefinedResultComponent } from './refined-result/refined-result.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MoodListenerInputComponent
+    MoodListenerInputComponent,
+    BasicResultComponent,
+    RefinedResultComponent
   ],
   imports: [
     BrowserModule,
