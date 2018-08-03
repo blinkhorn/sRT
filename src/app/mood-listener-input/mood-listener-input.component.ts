@@ -16,10 +16,9 @@ export class MoodListenerInputComponent implements OnInit {
   private sentencePunctuation: string;
   private sentence: string;
 
-  constructor(public moodListenerInputService: MoodListenerInputService) { }
+  constructor(public moodListenerInputService: MoodListenerInputService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmitMood(form: NgForm) {
     if (form.invalid) {
@@ -53,7 +52,9 @@ export class MoodListenerInputComponent implements OnInit {
         this.sentencePunctuation = ' .... We don\'t have a song for you.';
         break;
     }
-    this.sentence = `${this.sentenceBeginning} you're feeling ${this.moodUndercase}${this.sentencePunctuation}`;
+    this.sentence = `${this.sentenceBeginning} you're feeling ${
+      this.moodUndercase
+    }${this.sentencePunctuation}`;
   }
 
   getSentence(): string {
@@ -64,6 +65,10 @@ export class MoodListenerInputComponent implements OnInit {
     return this.mood;
   }
 
+  getListener(): string {
+    return this.listener;
+  }
+
   onSubmitListenerType(form: NgForm) {
     if (form.invalid) {
       return;
@@ -71,13 +76,14 @@ export class MoodListenerInputComponent implements OnInit {
     this.listener = form.value.listener;
 
     const that = this;
-    this.moodListenerInputService.makeRequest(this.mood, this.listener)
-    .subscribe((songData) => {
-      that.songTitle = songData.theSong.title;
-    });
+    if (this.listener === 'Refined' || this.listener === 'Basic') {
+      this.moodListenerInputService
+        .makeRequest(this.mood, this.listener)
+        .subscribe(songData => {
+          that.songTitle = songData.theSong.title;
+        });
+    }
   }
 
-  getListener(): string {
-    return this.listener;
-  }
+
 }
