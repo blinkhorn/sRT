@@ -1,0 +1,23 @@
+<h3 class="text-center">How are you feeling?</h3>
+
+<form #moodInput="ngForm" (ngSubmit)="onSubmitMood(moodInput)">
+  <div class="d-flex flex-column align-items-center">
+    <label>
+      <input type="text" name="mood" class="form-control" ngModel required>
+    </label>
+    <input class="input-group-btn btn btn-primary" type="submit" value="Submit Mood">
+  </div>
+  <br>
+</form>
+
+<div *ngIf="getMood() != undefined">
+  <h4 class="text-center">{{ getSentence() }}</h4>
+  <form #listenerTypeInput="ngForm" (ngSubmit)="onSubmitListenerType(listenerTypeInput)">
+    <div class="d-flex flex-column align-items-center">
+      <label>
+        <input type="type" name="listener" class="form-control" ngModel required>
+      </label>
+      <input class="input-group-btn btn btn-primary" type="submit" value="Submit Listener Type">
+    </div>
+  </form>
+</div>
