@@ -20,4 +20,14 @@
       <input class="input-group-btn btn btn-primary" type="submit" value="Submit Listener Type">
     </div>
   </form>
+
+  <div *ngIf="getListener() === 'Refined'">
+
+  </div>
+  <div *ngIf="getListener() === 'Basic'">
+
+  </div>
+  <div *ngIf="getListener() != 'Basic' && getListener() != 'Refined' && getListener() != undefined" class="alert alert-danger text-center" role="alert">
+    <h4 class="alert-heading">No song for you!</h4>
+  </div>
 </div>

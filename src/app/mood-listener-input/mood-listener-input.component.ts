@@ -31,7 +31,7 @@ export class MoodListenerInputComponent implements OnInit {
   }
 
   generateSentence() {
-    switch (this.mood) {
+    switch (this.moodUndercase) {
       case 'happy':
         this.sentenceBeginning = 'Great,';
         this.sentencePunctuation = '!';
@@ -71,9 +71,13 @@ export class MoodListenerInputComponent implements OnInit {
     this.listener = form.value.listener;
 
     const that = this;
-    this.moodListenerInputService.makeRequest(this.mood, form.value.listener)
+    this.moodListenerInputService.makeRequest(this.mood, this.listener)
     .subscribe((songData) => {
       that.songTitle = songData.theSong.title;
     });
+  }
+
+  getListener(): string {
+    return this.listener;
   }
 }
