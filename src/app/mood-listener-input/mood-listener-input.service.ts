@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RequestsService {
+export class MoodListenerInputService {
 
-  constructor(private http: HttpClient)  { }
+  constructor(private http: HttpClient) { }
 
   makeRequest(mood: string, listener: string): Observable<any> {
     return this.getSong(mood, listener);

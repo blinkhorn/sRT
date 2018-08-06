@@ -1,0 +1,41 @@
+<h3 class="text-center">How are you feeling?</h3>
+
+<form #moodInput="ngForm" (ngSubmit)="onSubmitMood(moodInput)">
+  <div class="d-flex flex-column align-items-center">
+    <label>
+      <input type="text" name="mood" class="form-control" ngModel required>
+    </label>
+    <input class="input-group-btn btn btn-primary" type="submit" value="Submit Mood">
+  </div>
+  <br>
+</form>
+
+<div *ngIf="getMood() != undefined">
+  <h4 class="text-center">{{ getSentence() }}</h4>
+  <div *ngIf="getSentenceBeginning() != 'So'">
+    <form #listenerTypeInput="ngForm" (ngSubmit)="onSubmitListenerType(listenerTypeInput)">
+      <div class="d-flex flex-column align-items-center">
+        <label>
+          <select class="form-control" name="listener" ngModel required>
+            <option value="">Please select what type of listener you are</option>
+            <option value="Basic">Basic</option>
+            <option value="Refined">Refined</option>
+            <option value="Special">Special</option>
+          </select>
+        </label>
+        <input class="input-group-btn btn btn-primary" type="submit" value="Submit Listener Type">
+      </div>
+      <br>
+      <br>
+    </form>
+
+    <div *ngIf="getListener() === 'Refined' || getListener() === 'Basic'" class="alert alert-primary text-center" role="alert">
+      <a class="btn btn-primary" type="submit" [routerLink]="[getListener().toLowerCase(), this.songTitle]">Listen to this!</a>
+    </div>
+
+    <div *ngIf="getListener() != 'Basic' && getListener() != 'Refined' && getListener() != undefined" class="alert alert-danger text-center"
+      role="alert">
+      <h4 class="alert-heading">You think you're special? No song for you!</h4>
+    </div>
+  </div>
+</div>

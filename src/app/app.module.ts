@@ -5,17 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RequestComponent } from './request/request.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { MoodInputComponent } from './mood-input/mood-input.component';
+import { MoodListenerInputComponent } from './mood-listener-input/mood-listener-input.component';
+import { BasicResultComponent } from './basic-result/basic-result.component';
+import { RefinedResultComponent } from './refined-result/refined-result.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RequestComponent,
-    MoodInputComponent
+    MoodListenerInputComponent,
+    BasicResultComponent,
+    RefinedResultComponent
   ],
   imports: [
     BrowserModule,

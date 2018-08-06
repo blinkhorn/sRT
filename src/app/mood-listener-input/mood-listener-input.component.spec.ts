@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RequestComponent } from './request.component';
+import { MoodListenerInputComponent } from './mood-listener-input.component';
 
-describe('RequestComponent', () => {
-  let component: RequestComponent;
-  let fixture: ComponentFixture<RequestComponent>;
+describe('MoodListenerInputComponent', () => {
+  let component: MoodListenerInputComponent;
+  let fixture: ComponentFixture<MoodListenerInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequestComponent ]
+      declarations: [ MoodListenerInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RequestComponent);
+    fixture = TestBed.createComponent(MoodListenerInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

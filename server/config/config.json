@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "Tiptoe",
+    "username": "postgres",
     "password": "postgres",
     "database": "songs_dev",
     "host": "localhost",

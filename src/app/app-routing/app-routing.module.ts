@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MoodInputComponent } from '../mood-input/mood-input.component';
+import { MoodListenerInputComponent } from '../mood-listener-input/mood-listener-input.component';
+import { RefinedResultComponent } from '../refined-result/refined-result.component';
+import { BasicResultComponent } from '../basic-result/basic-result.component';
 
 const routes: Routes = [
-  { path: '', component: MoodInputComponent }
+  { path: '', component: MoodListenerInputComponent },
+  { path: 'refined/:songTitle', component: RefinedResultComponent },
+  { path: 'basic/:songTitle', component: BasicResultComponent },
 ];
 
 @NgModule({
