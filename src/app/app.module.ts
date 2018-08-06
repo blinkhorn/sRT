@@ -26,8 +26,8 @@ import { RefinedResultComponent } from './refined-result/refined-result.componen
     AppRoutingModule,
     HttpClientModule
   ],
-  exports: [],
-  providers: [],
+  exports: [MoodListenerInputComponent, BasicResultComponent],
+  providers: [MoodListenerInputComponent, BasicResultComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

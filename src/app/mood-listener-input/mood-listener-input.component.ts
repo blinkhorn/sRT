@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+
 import { MoodListenerInputService } from './mood-listener-input.service';
 @Component({
   selector: 'app-mood-listener-input',
@@ -7,7 +9,7 @@ import { MoodListenerInputService } from './mood-listener-input.service';
   styleUrls: ['./mood-listener-input.component.css']
 })
 export class MoodListenerInputComponent implements OnInit {
-  songTitle: string;
+  public songTitle: string;
 
   private mood: string;
   private moodUndercase: string;
@@ -83,11 +85,9 @@ export class MoodListenerInputComponent implements OnInit {
     if (this.listener === 'Refined' || this.listener === 'Basic') {
       this.moodListenerInputService
         .makeRequest(this.mood, this.listener)
-        .subscribe(songData => {
+        .subscribe((songData) => {
           that.songTitle = songData.theSong.title;
         });
     }
   }
-
-
 }

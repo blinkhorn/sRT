@@ -8,7 +8,7 @@ import { BasicResultComponent } from '../basic-result/basic-result.component';
 const routes: Routes = [
   { path: '', component: MoodListenerInputComponent },
   { path: 'result/refined', component: RefinedResultComponent },
-  { path: 'result/basic', component: BasicResultComponent },
+  { path: 'result/basic/:songTitle', component: BasicResultComponent },
 ];
 
 @NgModule({

@@ -30,7 +30,7 @@
     </form>
 
     <div *ngIf="getListener() === 'Refined' || getListener() === 'Basic'" class="alert alert-primary text-center" role="alert">
-      <a class="btn btn-primary" type="submit" [routerLink]="['/result', getListener().toLowerCase()]">Listen to this!</a>
+      <a class="btn btn-primary" type="submit" [routerLink]="['/result', getListener().toLowerCase(), this.songTitle]">Listen to this!</a>
     </div>
 
     <div *ngIf="getListener() != 'Basic' && getListener() != 'Refined' && getListener() != undefined" class="alert alert-danger text-center"
