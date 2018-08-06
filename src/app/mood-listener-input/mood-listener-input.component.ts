@@ -57,6 +57,10 @@ export class MoodListenerInputComponent implements OnInit {
     }${this.sentencePunctuation}`;
   }
 
+  getSentenceBeginning(): string {
+    return this.sentenceBeginning;
+  }
+
   getSentence(): string {
     return this.sentence;
   }
