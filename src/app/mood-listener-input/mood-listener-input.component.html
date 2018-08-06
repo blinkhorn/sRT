@@ -16,7 +16,12 @@
     <form #listenerTypeInput="ngForm" (ngSubmit)="onSubmitListenerType(listenerTypeInput)">
       <div class="d-flex flex-column align-items-center">
         <label>
-          <input type="type" name="listener" class="form-control" ngModel required>
+          <select class="form-control" name="listener" ngModel required>
+            <option value="">Please select what type of listener you are</option>
+            <option value="Basic">Basic</option>
+            <option value="Refined">Refined</option>
+            <option value="Special">Special</option>
+          </select>
         </label>
         <input class="input-group-btn btn btn-primary" type="submit" value="Submit Listener Type">
       </div>
@@ -30,7 +35,7 @@
 
     <div *ngIf="getListener() != 'Basic' && getListener() != 'Refined' && getListener() != undefined" class="alert alert-danger text-center"
       role="alert">
-      <h4 class="alert-heading">No song for you!</h4>
+      <h4 class="alert-heading">You think you're special? No song for you!</h4>
     </div>
   </div>
 </div>
