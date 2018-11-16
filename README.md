@@ -22,14 +22,34 @@ Here are images of sRT running in the browser:
 
 sRT uses an Angular front-end and Node.js backend along with Sequelize and a PostgreSQL database.
 
-## Running unit tests
+## Installation Instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You will be able to run the the project in your browser soon — I will deploy this project in December 2019.
 
-## Running end-to-end tests
+If you want to run the sRT locally, follow the following instructions:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+(Mac)
+1. Assuming you have SSH set up for Github, open a new terminal tab, and in that tab, run the following bash commands in after you change into the directory where you want to store this repository:
+  ```bash
+  $ git clone git@github.com:blinkhorn/sRT.git
+  $ cd sRT
+  $ npm install
+  ```
+2. Run the Angular front-end using the following bash command:
+```bash
+$ ng s --o
+```
+This command will open the application in your default browser.
+3. run
+```bash
+$ cd server
+$ npm run start:dev
+```
+This will start up the node.js server
+4. You will have to create and seed a database in order to be returned songs. Use this tutorial as a guide for using my Sequelize code with a postgres database:
+https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize
 
-## Further help
+## Contribution Guidelines
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To contribute to our code, identify bugs, and propose improvements, please
+submit issues [here](https://github.com/blinkhorn/sRT/issues "sRT issues").
