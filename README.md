@@ -18,9 +18,9 @@ Here are images of sRT running in the browser:
 - UI that lets the user go through a series of coices to find the right song for them
 - Server that searches the database for and displays the right song based on the        user's input
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+sRT uses an Angular front-end and Node.js backend along with Sequelize and a PostgreSQL database.
 
 ## Running unit tests
 
