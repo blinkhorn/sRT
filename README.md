@@ -20,16 +20,16 @@ Here are images of sRT running in the browser:
 
 ## Technologies Used
 
-sRT uses an Angular front-end and Node.js backend along with Sequelize and a PostgreSQL database.
+sRT uses an Angular front-end and Node.js back-end along with Sequelize and a PostgreSQL database.
 
 ## Installation Instructions
 
-You will be able to run the the project in your browser soon — I will deploy this project in December 2019.
+You will be able to run the the project in your browser soon — I will deploy this project in December 2018.
 
 If you want to run the sRT locally, follow the following instructions:
 
 (Mac)
-1. Assuming you have SSH set up for Github, open a new terminal tab, and in that tab, run the following bash commands in after you change into the directory where you want to store this repository:
+1. Assuming you have SSH set up for Github, open a new terminal tab, and in that tab, run the following bash commands after you change into the directory where you want to store this repository:
   ```bash
   $ git clone git@github.com:blinkhorn/sRT.git
   $ cd sRT
@@ -40,16 +40,18 @@ If you want to run the sRT locally, follow the following instructions:
 $ ng s --o
 ```
 This command will open the application in your default browser.
+
 3. run
 ```bash
 $ cd server
 $ npm run start:dev
 ```
 This will start up the node.js server
-4. You will have to create and seed a database in order to be returned songs. Use this tutorial as a guide for using my Sequelize code with a postgres database:
+
+4. You will have to create and seed a database in order to be returned songs. Use this tutorial as a guide for using my Sequelize code with a Postgres database:
 https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize
 
 ## Contribution Guidelines
 
-To contribute to our code, identify bugs, and propose improvements, please
+To contribute to my code, identify bugs, and propose improvements, please
 submit issues [here](https://github.com/blinkhorn/sRT/issues "sRT issues").
