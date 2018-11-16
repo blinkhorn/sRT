@@ -13,9 +13,10 @@ Here are images of sRT running in the browser:
 ![alt text](./images/app-image-3.png "App image — result button")
 ![alt text](./images/app-image-4.png "App image — result")
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- UI that lets the user go through a series of coices to find the right song for them
+- Server that searches the database for and displays the right song based on the        user's input
 
 ## Build
 
