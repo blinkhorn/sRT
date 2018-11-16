@@ -6,7 +6,12 @@ sRT (Song Request Tracker) is a full stack application that presents the user wi
 
 ## Example
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Here are images of sRT running in the browser: 
+![alt text](./images/app-image-0.png "App image - landing")
+![alt text](./images/app-image-1.png "App image — listener type choice")
+![alt text](./images/app-image-2.png "App image — listener type chosen")
+![alt text](./images/app-image-3.png "App image — result button")
+![alt text](./images/app-image-4.png "App image — result")
 
 ## Code scaffolding
 
