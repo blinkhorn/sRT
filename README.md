@@ -20,7 +20,7 @@ Here are images of sRT running in the browser:
 
 ## Technologies Used
 
-sRT uses an Angular front-end and Node.js back-end along with Sequelize and a PostgreSQL database.
+sRT uses an Angular front-end and Node.js back-end along with Bootstrap styling, Sequelize, and a PostgreSQL database.
 
 ## Installation Instructions
 
