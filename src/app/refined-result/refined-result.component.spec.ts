@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RefinedResultComponent } from './refined-result.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('RefinedResultComponent', () => {
   let component: RefinedResultComponent;
@@ -8,7 +9,9 @@ describe('RefinedResultComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RefinedResultComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ RefinedResultComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

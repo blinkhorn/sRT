@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoodListenerInputComponent } from './mood-listener-input.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('MoodListenerInputComponent', () => {
   let component: MoodListenerInputComponent;
@@ -8,7 +11,9 @@ describe('MoodListenerInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoodListenerInputComponent ]
+      imports: [ FormsModule, HttpClientModule],
+      declarations: [ MoodListenerInputComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
